@@ -1,10 +1,21 @@
-from utils import clear, header
+from utils import clear, header, invalid_account
 from console import CashMachineConsole
+from auth import Auth
 
 def main():
     clear()
     header()
-    CashMachineConsole.call_operation()
+
+    account = False
+
+    while not account:
+        account = Auth.auth_client()
+        if not account:
+            clear()
+            header()
+            invalid_account()
+
+    CashMachineConsole.call_operation(account)
 
 
 if __name__ == '__main__':

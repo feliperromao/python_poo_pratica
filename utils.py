@@ -10,3 +10,6 @@ def header():
     print('***********************************************')
     print('************ Caixa Eletrônico *****************')
     print('***********************************************')
+
+def invalid_account():
+    print('Numero de conta e/ou senha incorretos')
